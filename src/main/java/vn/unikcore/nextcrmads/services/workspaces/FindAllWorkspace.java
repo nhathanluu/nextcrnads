@@ -30,13 +30,4 @@ public class FindAllWorkspace implements IFindService<GetWorkspaceResponse, Stri
 
         return data;
     }
-
-    public GetWorkspaceResponse getAllWorkspace (String url) {
-        RestTemplate restTemplate = new RestTemplate();
-        HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_JSON);
-        GetWorkspaceResponse result = restTemplate.postForObject(url, new HashMap<String, String>(), GetWorkspaceResponse.class);
-
-        return result;
-    }
 }
