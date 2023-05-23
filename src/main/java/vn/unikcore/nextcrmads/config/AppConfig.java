@@ -7,4 +7,7 @@ import org.springframework.stereotype.Component;
 public class AppConfig {
     @Value("${airbyte.api_host}")
     public String airbyte_host;
+
+    @Value("${app.debug}")
+    public Boolean debug;
 }
