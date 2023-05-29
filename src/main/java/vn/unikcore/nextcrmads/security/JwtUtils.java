@@ -3,6 +3,8 @@ package vn.unikcore.nextcrmads.security;
 import io.jsonwebtoken.*;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;
+import vn.unikcore.nextcrmads.model.postgres.User;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,7 +14,6 @@ import org.springframework.util.StringUtils;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.Date;
-import java.util.List;
 import java.util.function.Function;
 
 @Slf4j
@@ -47,11 +48,13 @@ public class JwtUtils{
         return extractExpiration(token).before(new Date());
     }
 
-    public String generateToken(String email , List<String> roles) {
-
-        return Jwts.builder().setSubject(email).claim("role",roles).setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(Date.from(Instant.now().plus(jwtExpiration, ChronoUnit.MILLIS)))
+    public String generateToken(User user) {
+        user.setPassword("");
+        String token = Jwts.builder().setSubject(user.getEmail()).claim("data", user).setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + jwtExpiration))
                 .signWith(SignatureAlgorithm.HS256, secret).compact();
+
+        return token;
     }
 
     public boolean validateToken(String token) {

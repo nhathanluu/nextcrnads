@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import vn.unikcore.nextcrmads.service.auth.JpaUserDetailService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.lang.NonNull;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -23,8 +24,10 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class JwtFilter extends OncePerRequestFilter {
 
-   private  final JwtUtils jwtUtilities;
-   private final JpaUserDetailService customerUserDetailsService ;
+    @Autowired
+    private  final JwtUtils jwtUtilities;
+    
+    private final JpaUserDetailService customerUserDetailsService ;
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request,
@@ -41,7 +44,7 @@ public class JwtFilter extends OncePerRequestFilter {
             UserDetails userDetails = customerUserDetailsService.loadUserByUsername(email);
             if (userDetails != null) {
             UsernamePasswordAuthenticationToken authentication =
-                    new UsernamePasswordAuthenticationToken(userDetails.getUsername() ,null , userDetails.getAuthorities());
+                    new UsernamePasswordAuthenticationToken(userDetails ,null , userDetails.getAuthorities());
                 log.info("authenticated user with email :{}", email);
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
