@@ -1,4 +1,4 @@
-package vn.unikcore.nextcrmads.security;
+package vn.unikcore.nextcrmads.security.authentication;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

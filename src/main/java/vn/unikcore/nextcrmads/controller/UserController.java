@@ -3,7 +3,6 @@ package vn.unikcore.nextcrmads.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +14,10 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.transaction.Transactional;
 import vn.unikcore.nextcrmads.common.helper.ApiResponse;
 import vn.unikcore.nextcrmads.common.helper.AuthHelper;
-import vn.unikcore.nextcrmads.model.auth.UserSecurity;
 import vn.unikcore.nextcrmads.model.postgres.User;
 import vn.unikcore.nextcrmads.predicate.user.CreateUserDto;
 import vn.unikcore.nextcrmads.predicate.user.LoginDto;
-import vn.unikcore.nextcrmads.security.JwtUtils;
+import vn.unikcore.nextcrmads.security.authentication.JwtUtils;
 import vn.unikcore.nextcrmads.service.user.CreateUser;
 import vn.unikcore.nextcrmads.service.user.FindByEmail;
 import vn.unikcore.nextcrmads.service.user.FindById;
@@ -58,7 +56,7 @@ public class UserController {
     @Autowired
     private FindById findById;
 
-    @PreAuthorize("hasPermission( #id, 'USER', 'VIEW')")
+    @PreAuthorize("requiredRole('USER', 'VIEW')")
     @GetMapping("/{userId}")
     public ResponseEntity<Object> profile (@PathVariable(name = "userId") Long userId) {
         User user = findById.execute(userId);

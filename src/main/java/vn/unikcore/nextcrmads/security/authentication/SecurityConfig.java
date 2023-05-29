@@ -1,4 +1,4 @@
-package vn.unikcore.nextcrmads.security;
+package vn.unikcore.nextcrmads.security.authentication;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
