@@ -1,4 +1,4 @@
-package vn.unikcore.nextcrmads.common.dto.shared;
+package vn.unikcore.nextcrmads.pojo.shared;
 
 public class TunnelMethod {
     private String tunnel_method;

@@ -1,4 +1,4 @@
-package vn.unikcore.nextcrmads.common.dto.definition;
+package vn.unikcore.nextcrmads.pojo.definition;
 
 public class GetSourceDefinitionResponse {
     private SourceDefinitionTemplate[] sourceDefinitions;

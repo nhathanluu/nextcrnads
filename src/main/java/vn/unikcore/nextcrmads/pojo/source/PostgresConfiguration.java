@@ -1,7 +1,7 @@
-package vn.unikcore.nextcrmads.common.dto.source;
+package vn.unikcore.nextcrmads.pojo.source;
 
-import vn.unikcore.nextcrmads.common.dto.shared.ReplicationMethod;
-import vn.unikcore.nextcrmads.common.dto.shared.TunnelMethod;
+import vn.unikcore.nextcrmads.pojo.shared.ReplicationMethod;
+import vn.unikcore.nextcrmads.pojo.shared.TunnelMethod;
 
 public class PostgresConfiguration {
     public String getHost() {

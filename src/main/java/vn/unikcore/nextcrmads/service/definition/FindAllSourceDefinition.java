@@ -4,11 +4,10 @@ import java.util.HashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import vn.unikcore.nextcrmads.common.dto.definition.GetSourceDefinitionResponse;
 import vn.unikcore.nextcrmads.common.helper.HttpHelper;
 import vn.unikcore.nextcrmads.common.interfaces.IFindService;
 import vn.unikcore.nextcrmads.config.AppConfig;
+import vn.unikcore.nextcrmads.pojo.definition.GetSourceDefinitionResponse;
 
 @Service
 public class FindAllSourceDefinition implements IFindService<GetSourceDefinitionResponse, String> {

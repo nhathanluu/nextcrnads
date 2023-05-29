@@ -1,31 +1,25 @@
 package vn.unikcore.nextcrmads.common.helper;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import vn.unikcore.nextcrmads.pojo.shared.Response;
 
 public class ApiResponse {
-    public static ResponseEntity<Object> generateResponse(HttpStatus status, boolean error,String message, Object responseObj) {
-        Map<String, Object> map = new HashMap<String, Object>();
+    public static ResponseEntity<Object> generateResponse(HttpStatus status, boolean error, String message, Object responseObj) {
         try {
-            map.put("timestamp", new Date());
-            map.put("status", status.value());
-            map.put("isSuccess", error);
-            map.put("message", message);
-            map.put("data", responseObj);
+            if (error) {
+                Response response = new Response(message, status.value());
 
-            return new ResponseEntity<Object>(map,status);
+                return new ResponseEntity<Object>(response, status);
+            } else {
+                Response response = new Response(responseObj);
+
+                return new ResponseEntity<Object>(response, status);
+            }
         } catch (Exception e) {
-            map.clear();
-            map.put("timestamp", new Date());
-            map.put("status", HttpStatus.INTERNAL_SERVER_ERROR.value());
-            map.put("isSuccess",false);
-            map.put("message", e.getMessage());
-            map.put("data", null);
-            return new ResponseEntity<Object>(map,status);
+            Response response = new Response(message, status.value());
+
+            return new ResponseEntity<Object>(response, status);
         }
     }
 }

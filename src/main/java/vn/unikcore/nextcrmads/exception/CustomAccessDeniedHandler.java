@@ -1,7 +1,6 @@
 package vn.unikcore.nextcrmads.exception;
 
 import java.io.IOException;
-import java.nio.file.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
 import jakarta.servlet.ServletException;

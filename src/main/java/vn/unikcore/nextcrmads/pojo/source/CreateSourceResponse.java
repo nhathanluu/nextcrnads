@@ -1,4 +1,4 @@
-package vn.unikcore.nextcrmads.common.dto.source;
+package vn.unikcore.nextcrmads.pojo.source;
 
 public class CreateSourceResponse {
     private String sourceDefinitionId;

@@ -1,4 +1,4 @@
-package vn.unikcore.nextcrmads.common.dto.user;
+package vn.unikcore.nextcrmads.pojo.user;
 
 public class CreateUserDto {
     private String email;

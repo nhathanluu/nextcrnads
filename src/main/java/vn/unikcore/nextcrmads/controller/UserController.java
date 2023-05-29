@@ -7,10 +7,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import jakarta.transaction.Transactional;
-import vn.unikcore.nextcrmads.common.dto.user.CreateUserDto;
 import vn.unikcore.nextcrmads.common.helper.ApiResponse;
+import vn.unikcore.nextcrmads.pojo.user.CreateUserDto;
 import vn.unikcore.nextcrmads.service.user.CreateUser;
 
 @RestController

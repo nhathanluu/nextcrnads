@@ -5,8 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import vn.unikcore.nextcrmads.common.dto.definition.GetSourceDefinitionResponse;
+import vn.unikcore.nextcrmads.pojo.definition.GetSourceDefinitionResponse;
 import vn.unikcore.nextcrmads.service.definition.FindAllSourceDefinition;
 
 @RestController
