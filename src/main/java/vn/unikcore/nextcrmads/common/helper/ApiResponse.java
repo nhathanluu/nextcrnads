@@ -2,7 +2,8 @@ package vn.unikcore.nextcrmads.common.helper;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import vn.unikcore.nextcrmads.pojo.shared.Response;
+
+import vn.unikcore.nextcrmads.predicate.shared.Response;
 
 public class ApiResponse {
     public static ResponseEntity<Object> generateResponse(HttpStatus status, boolean error, String message, Object responseObj) {

@@ -1,4 +1,4 @@
-package vn.unikcore.nextcrmads.pojo.workspace;
+package vn.unikcore.nextcrmads.predicate.workspace;
 
 public class WorkspaceTemplate {
     private String workspaceId;

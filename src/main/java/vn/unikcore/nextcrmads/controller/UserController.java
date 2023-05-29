@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import jakarta.transaction.Transactional;
 import vn.unikcore.nextcrmads.common.helper.ApiResponse;
-import vn.unikcore.nextcrmads.pojo.user.CreateUserDto;
+import vn.unikcore.nextcrmads.predicate.user.CreateUserDto;
 import vn.unikcore.nextcrmads.service.user.CreateUser;
 
 @RestController

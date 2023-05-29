@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import vn.unikcore.nextcrmads.pojo.source.CreatePostgresSourceDto;
-import vn.unikcore.nextcrmads.pojo.source.CreateSourceResponse;
+import vn.unikcore.nextcrmads.predicate.source.CreatePostgresSourceDto;
+import vn.unikcore.nextcrmads.predicate.source.CreateSourceResponse;
 import vn.unikcore.nextcrmads.service.source.CreatePostgresSource;
 
 @RestController

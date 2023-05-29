@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import vn.unikcore.nextcrmads.common.interfaces.*;
-import vn.unikcore.nextcrmads.pojo.user.CreateUserDto;
+import vn.unikcore.nextcrmads.predicate.user.CreateUserDto;
 import vn.unikcore.nextcrmads.repository.postgres.UserRepository;
 
 @Service

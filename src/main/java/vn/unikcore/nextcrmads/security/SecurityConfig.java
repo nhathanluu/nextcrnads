@@ -26,9 +26,7 @@ public class SecurityConfig {
     { http
             .csrf().disable()
             .authorizeHttpRequests()
-            .requestMatchers("api/workspace/**").permitAll()
-            .requestMatchers("/admin/**").hasAuthority("ADMIN")
-            .requestMatchers("/superadmin/**").hasAuthority("SUPERADMIN")
+            .requestMatchers("api/**").permitAll()
             .and().httpBasic()
             .and()
             .exceptionHandling()

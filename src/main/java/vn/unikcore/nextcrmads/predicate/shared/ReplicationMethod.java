@@ -1,4 +1,4 @@
-package vn.unikcore.nextcrmads.pojo.shared;
+package vn.unikcore.nextcrmads.predicate.shared;
 
 public class ReplicationMethod {
     private String method;

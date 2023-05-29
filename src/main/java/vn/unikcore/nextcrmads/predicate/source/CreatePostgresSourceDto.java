@@ -1,4 +1,4 @@
-package vn.unikcore.nextcrmads.pojo.source;
+package vn.unikcore.nextcrmads.predicate.source;
 
 public class CreatePostgresSourceDto {
     private String workspaceId;

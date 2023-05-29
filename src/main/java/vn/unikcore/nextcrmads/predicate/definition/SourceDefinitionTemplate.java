@@ -1,4 +1,4 @@
-package vn.unikcore.nextcrmads.pojo.definition;
+package vn.unikcore.nextcrmads.predicate.definition;
 
 public class SourceDefinitionTemplate {
     public String getSourceDefinitionId() {

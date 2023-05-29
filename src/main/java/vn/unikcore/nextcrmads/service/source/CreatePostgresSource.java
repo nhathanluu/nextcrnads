@@ -5,8 +5,8 @@ import org.springframework.stereotype.Service;
 import vn.unikcore.nextcrmads.common.helper.HttpHelper;
 import vn.unikcore.nextcrmads.common.interfaces.ICreateService;
 import vn.unikcore.nextcrmads.config.AppConfig;
-import vn.unikcore.nextcrmads.pojo.source.CreatePostgresSourceDto;
-import vn.unikcore.nextcrmads.pojo.source.CreateSourceResponse;
+import vn.unikcore.nextcrmads.predicate.source.CreatePostgresSourceDto;
+import vn.unikcore.nextcrmads.predicate.source.CreateSourceResponse;
 
 @Service
 public class CreatePostgresSource implements ICreateService<CreateSourceResponse, CreatePostgresSourceDto> {

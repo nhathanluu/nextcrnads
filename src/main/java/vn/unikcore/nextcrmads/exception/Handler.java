@@ -23,7 +23,7 @@ import java.util.Map;
 
 import vn.unikcore.nextcrmads.common.helper.ApiResponse;
 import vn.unikcore.nextcrmads.config.AppConfig;
-import vn.unikcore.nextcrmads.pojo.shared.Response;
+import vn.unikcore.nextcrmads.predicate.shared.Response;
 
 @RestControllerAdvice
 public class Handler implements AuthenticationEntryPoint {
